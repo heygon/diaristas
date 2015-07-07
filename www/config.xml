@@ -25,6 +25,6 @@
     <preference name="android-installLocation" value="auto" />
     <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.vibration" />
-    <icon src="icon.png" />
+    <icon src="img/logo.png" />
     <access origin="*" />
 </widget>

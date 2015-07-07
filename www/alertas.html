@@ -12,7 +12,7 @@
 	$(document).ready(function(){
 	  $.getJSON('http://diarista.esy.es/Lista_alertas.php',function(data){
       $.each(data,function(key,val){
-      $('.lista_alertas').after('<li class="list-group-item"><img src="'+val.Foto+'" style="width:50px;"><div style="float:right;  width:70%; text-align:center;"><h4 class="list-group-item-heading">'+val.Nome+'</h4><p style="font-size:12px;">'+val.Descricacao+'</p></div></li>');
+      $('.lista_alertas').after('<li class="list-group-item"><img src="'+val.Foto+'" style="width:50px;"><div style="float:right;  width:70%; text-align:center;"><h4 class="list-group-item-heading">'+val.nome+'</h4><p style="font-size:12px;">'+val.Descricacao+'</p></div></li>');
 
       	      });
     });

@@ -11,7 +11,7 @@
   $(document).ready(function(){
     $.getJSON('http://diarista.esy.es/Lista_diaristas.php',function(data){
       $.each(data,function(key,val){
-       $('.lista_diaristas').after('<li class="list-group-item"><img src="'+val.Foto+'" style="width:50px;"/><h4 class="list-group-item-heading" style="float:right;">'+val.nome+'</h4><div class="list-group-item-text"><div class="classificacao" style="float:right;position:relative; top:-15px;">Avaliação: '+val.avaliacao+' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R$'+val.valor+'</div><!--fim div classficacao!--></div>  </li>');
+       $('.lista_diaristas').after('<li class="list-group-item"><img src="'+val.Foto+'" style="width:50px;"/><h4 class="list-group-item-heading" style="float:right;">'+val.nome+'</h4><div class="list-group-item-text"><div class="classificacao" style="float:right;position:relative; top:-15px;">Avaliação: '+val.Avaliacao+' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R$'+val.Valor+'</div><!--fim div classficacao!--></div>  </li>');
 
       });
     });
@@ -48,7 +48,7 @@
             <li><a href="#">Alertas</a></li>
             <li><a href="#">Config</a></li>
             <li><a href="#">Sobre app</a></li>
-            <li role="separator" class="divider"></li>
+            <li role="separator" class="divider"></li>  
             <li><a href="#">Sair</a></li>       
         
       </ul>
@@ -64,8 +64,6 @@
   </div>
   <li class="list-group-item"><p>&nbsp;</p></li>
 </ul>
-
-
 
 
 

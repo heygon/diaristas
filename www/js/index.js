@@ -6,6 +6,6 @@ $(document).ready(function(){
 		var login  =  $('.nome').val();
 		var senha  =  $('.senha').val();
 
-		alert(login);
+		location.href="home.html";
 	});	
 });

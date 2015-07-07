@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <meta charset="utf8">
+  <title>Diarista APP</title>
+</head>
+<script type="text/javascript">
+	$(document).ready(function(){
+	  $.getJSON('http://diarista.esy.es/perfil.php',function(data){
+      $.each(data,function(key,val){
+      	$('.nome').html(val.nome);
+      	$('.cidade').html(val.Endereco);      	
+      	$('.telefone').html(val.Telefone);
+      	$('.descricao').html(val.Descricao);
+      	$('.thumbnail').html('<img src="'+val.Foto+'" />');
+      });
+    });
+
+	});
+</script>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Diaristas</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    
+        <ul class="nav navbar-nav navbar-right menu-footer" >           
+          
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Alertas</a></li>
+            <li><a href="#">Config</a></li>
+            <li><a href="#">Sobre app</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Sair</a></li>         
+        
+      </ul>
+    
+     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail"></a>
+  </div>
+  Nome:<div class="nome"></div>
+  <br/>
+  Cidade:<div class="cidade"></div>
+  <br/>
+  Telefone:<div class="telefone"></div>
+
+ 	<p>&nbsp;<div style="padding-left:30px; padding-right:30px;" class="btn-primary btn">Contratar</div></p>
+
+ 	<p class="descricao" style="width:80%; margin:auto;"></p>
+
+</div>
+
+
+
+ <div class="menu-footer" style="position:fixed; text-align:center; top:85%;">
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="home.html">Home</a></li>
+    <li role="presentation"><a href="perfil.html">Perfil</a></li>
+    <li role="presentation"><a href="alertas.html">Alertas</a></li>
+    <li role="presentation"><a href="config.html">Config</a></li>
+  </ul>  
+  <a href="http://web-m42.com" target="_blank">Desenvolvido por M42</a>
+  </div>
+</body>
+</html>
+
+
+
+

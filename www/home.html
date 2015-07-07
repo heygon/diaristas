@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <meta charset="utf8">
+  
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $.getJSON('http://diarista.esy.es/Lista_diaristas.php',function(data){
+      $.each(data,function(key,val){
+       $('.lista_diaristas').after('<li class="list-group-item"><img src="'+val.Foto+'" style="width:50px;"/><h4 class="list-group-item-heading" style="float:right;">'+val.nome+'</h4><div class="list-group-item-text"><div class="classificacao" style="float:right;position:relative; top:-15px;">Avaliação: '+val.avaliacao+' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R$'+val.valor+'</div><!--fim div classficacao!--></div>  </li>');
+
+      });
+    });
+   
+
+  });
+
+  </script>
+
+  <title>Diarista APP</title>
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Diaristas</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    
+        <ul class="nav navbar-nav navbar-right menu-footer" >   
+        
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Alertas</a></li>
+            <li><a href="#">Config</a></li>
+            <li><a href="#">Sobre app</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Sair</a></li>       
+        
+      </ul>
+    
+     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<ul class="list-group" style="width:90%; margin:auto;">
+  <div class="lista_diaristas">
+    
+  </div>
+  <li class="list-group-item"><p>&nbsp;</p></li>
+</ul>
+
+
+
+
+
+
+
+ <div class="menu-footer" style="position:fixed; text-align:center; top:85%; background:#fff;">
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="home.html">Home</a></li>
+    <li role="presentation"><a href="perfil.html">Perfil</a></li>
+    <li role="presentation"><a href="alertas.html">Alertas</a></li>
+    <li role="presentation"><a href="config.html">Config</a></li>
+  </ul>  
+  <a href="http://web-m42.com" target="_blank">Desenvolvido por M42</a>
+  </div>
+</body>
+</html>
+
+
+
+

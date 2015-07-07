@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <meta charset="utf8">
+  <title>Diarista APP</title>
+</head>
+<script>
+  $(document).ready(function(){
+    $(document).ready(function(){
+    $.getJSON('http://diarista.esy.es/perfil.php',function(data){
+      $.each(data,function(key,val){
+        $('.nome').html(val.nome);
+        $('.login').html(val.Login);        
+        $('.senha').html(val.Senha);
+        $('.endereco').html(val.Endereco);
+        $('.telefone').html(val.Telefone);
+        $('.descricao').html(val.Descricao);
+        $('.foto').html('<img src="'+val.Foto+'" />');
+      });
+    });
+
+  });
+  }); 
+</script>
+
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Diaristas</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    
+        <ul class="nav navbar-nav navbar-right menu-footer" > 
+                  
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Alertas</a></li>
+            <li><a href="#">Config</a></li>
+            <li><a href="#">Sobre app</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Sair</a></li>         
+        
+      </ul>
+    
+     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="row" style="text-aling:center; width:80%; margin:auto;">       
+    <div class="foto" style="width:50px; margin-bottom:20px;"></div> 
+    <div style="float:right;" class="btn-primary btn">Editar Dados</div>
+      <br/>
+      <ul class="list-group" style="z-index:99">
+        <li class="list-group-item"><strong>Nome:</strong>&nbsp;<div class="nome"></div></li>
+        <li class="list-group-item"><strong>Login:</strong>&nbsp;<div class="login"></div></li>
+        <li class="list-group-item"><strong>senha:</strong>&nbsp;<div class="senha"></div></li>
+        <li class="list-group-item"><strong>Endereço:</strong>&nbsp;<div class="endereco"></div></li>
+        <li class="list-group-item"><strong>Telefone 1:</strong>&nbsp;<div class="telefone"></div></li>
+        <li class="list-group-item"><strong>Descrição:</strong>&nbsp;<div class="descricao"></div></p>
+        </li>
+        <li class="list-group-item" ><p>&nbsp;</p></li>
+      </ul>  
+  </div>
+
+
+
+ <div class="menu-footer" style="position:fixed; text-align:center; top:85%; z-index:99999; background:#fff;">
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="home.html">Home</a></li>
+    <li role="presentation"><a href="perfil.html">Perfil</a></li>
+    <li role="presentation"><a href="alertas.html">Alertas</a></li>
+    <li role="presentation"><a href="config.html">Config</a></li>
+  </ul>  
+  <a href="http://web-m42.com" target="_blank">Desenvolvido por M42</a>
+  </div>
+</body>
+</html>
+
+
+
+

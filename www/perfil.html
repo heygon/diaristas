@@ -8,20 +8,22 @@
   <meta charset="utf8">
   <title>Diarista APP</title>
 </head>
+
 <script type="text/javascript">
-	$(document).ready(function(){
-	  $.getJSON('http://diarista.esy.es/perfil.php',function(data){
+  $(document).ready(function(){
+    $.getJSON('http://diarista.esy.es/perfil.php',function(data){
       $.each(data,function(key,val){
-      	$('.nome').html(val.nome);
-      	$('.cidade').html(val.Endereco);      	
-      	$('.telefone').html(val.Telefone);
-      	$('.descricao').html(val.Descricao);
-      	$('.thumbnail').html('<img src="'+val.Foto+'" />');
+        $('.nome').html(val.nome);
+        $('.cidade').html(val.Endereco);        
+        $('.telefone').html(val.Telefone);
+        $('.descricao').html(val.Descricao);
+        $('.thumbnail').html('<img src="'+val.Foto+'" />');
       });
     });
 
-	});
+  });
 </script>
+
 <body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -57,22 +59,28 @@
 </nav>
 
 <div class="row">
-  <div class="col-xs-6 col-md-3">
-    <a href="#" class="thumbnail"></a>
+ 
+  <div class="formularios" style="padding-left:3%">
+  <br/>    
+  Nome:<div class="nome" input-type="text">
+    
+<div class="input-group input-group-sm">
+ 
+  <input type="text" class="form-control" placeholder="Nome" aria-describedby="sizing-addon3">
+</div>
   </div>
-  Nome:<div class="nome"></div>
   <br/>
   Cidade:<div class="cidade"></div>
   <br/>
   Telefone:<div class="telefone"></div>
 
- 	<p>&nbsp;<div style="padding-left:30px; padding-right:30px;" class="btn-primary btn">Contratar</div></p>
+  </div>
 
- 	<p class="descricao" style="width:80%; margin:auto;"></p>
+
+  <p>&nbsp;<div style="padding-left:30px; padding-right:30px;" class="btn-primary btn">Contratar</div></p>
+  <p class="descricao" style="width:80%; margin:auto;"></p>
 
 </div>
-
-
 
  <div class="menu-footer" style="position:fixed; text-align:center; top:85%;">
   <ul class="nav nav-tabs">
@@ -83,6 +91,7 @@
   </ul>  
   <a href="http://web-m42.com" target="_blank">Desenvolvido por M42</a>
   </div>
+
 </body>
 </html>
 
